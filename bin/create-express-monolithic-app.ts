@@ -1,4 +1,4 @@
-#!/usr/bin/env nod
+#!/usr/bin/env node
 
 import inquirer from 'inquirer';
 import { AppCreator } from '../src';

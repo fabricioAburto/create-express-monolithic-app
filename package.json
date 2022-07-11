@@ -1,5 +1,5 @@
 {
-  "version": "0.1.2",
+  "version": "0.1.3",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -12,8 +12,10 @@
     "node": ">=10"
   },
   "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build --verbose --target node",
+    "start:2": "tsdx watch",
+    "start": "tsc && node bin/create-mf-app.js",
+    "build": "tsc",
+    "build:2": "tsdx build --verbose --target node",
     "test": "tsdx test",
     "lint": "tsdx lint",
     "prepare": "tsdx build",
