@@ -4,49 +4,11 @@ import fs from 'fs';
 import util from 'util';
 import glob from 'glob';
 import path from 'path';
-import inquirer from 'inquirer';
 const ncp = util.promisify(require('ncp').ncp);
 
 // import fs from 'fs';
 // import path from 'path';
 import { Configurations, Profiler } from './types';
-
-export const questioner = async () => {
-  const answers = await inquirer.prompt<Configurations>([
-    {
-      name: 'name',
-      type: 'input',
-      default: 'express-server',
-      message: 'Ingresa el nombre:',
-    },
-    {
-      name: 'port',
-      type: 'number',
-      default: 8080,
-      message: 'Ingresa el puero:',
-    },
-    {
-      name: 'dbPort',
-      type: 'number',
-      default: 3306,
-      message: 'Ingresa el puerto de la base de datos:',
-    },
-    {
-      name: 'dbName',
-      type: 'input',
-      default: 'test',
-      message: 'Ingresa el nombre de la base de datos:',
-    },
-    {
-      name: 'author',
-      type: 'input',
-      default: 'unknown',
-      message: 'Nombre del author:',
-    },
-  ]);
-  console.log(answers);
-  AppCreator.create(answers).catch(console.error);
-};
 
 export class AppCreator {
   static async create(configs: Configurations) {
@@ -92,5 +54,3 @@ export class AppCreator {
     };
   }
 }
-
-questioner().then(() => {});
