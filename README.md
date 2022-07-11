@@ -9,6 +9,15 @@ Es una opcion mas completa a los generadores actuales.
 npm install -g create-express-monolithic-app
 ```
 
+Crear el proyecto usando:
+
+```cmd
+npx create-express-monolithic-app
+```
+
+Sigue los pasos.
+
+
 Ingresas a la carpeta que se genero, la cual deberia llamarse igual al nombre que has pasado o sino deberias tener una carpeta llamada `express-server`
 
 Por ultimo installar dependencias y lanzar la applicacion.
