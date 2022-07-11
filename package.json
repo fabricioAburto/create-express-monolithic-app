@@ -12,16 +12,8 @@
     "node": ">=10"
   },
   "scripts": {
-    "start:2": "tsdx watch",
     "start": "tsc && node bin/create-mf-app.js",
-    "build": "tsc",
-    "build:2": "tsdx build --verbose --target node",
-    "test": "tsdx test",
-    "lint": "tsdx lint",
-    "prepare": "tsdx build",
-    "size": "size-limit",
-    "analyze": "size-limit --why",
-    "live": "nodemon ./dist/index.js"
+    "build": "tsc"
   },
   "husky": {
     "hooks": {
