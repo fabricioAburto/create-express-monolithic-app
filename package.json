@@ -1,0 +1,65 @@
+{
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why",
+    "live": "nodemon ./dist/index.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "create-express-monolithic-app",
+  "author": "Jose Aburto",
+  "module": "dist/create-express-monolithic-app.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/create-express-monolithic-app.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/create-express-monolithic-app.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "devDependencies": {
+    "@types/glob": "^7.2.0",
+    "@size-limit/preset-small-lib": "^7.0.8",
+    "@types/inquirer": "^8.1.3",
+    "@types/shelljs": "^0.8.11",
+    "husky": "^8.0.1",
+    "nodemon": "^2.0.19",
+    "size-limit": "^7.0.8",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.4.0",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "glob": "^7.2.0",
+    "inquirer": "^8.2.0",
+    "ncp": "^2.0.0",
+    "shelljs": "^0.8.5"
+  }
+}
