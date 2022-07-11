@@ -24,7 +24,7 @@ class AppCreator {
     static create(configs) {
         return __awaiter(this, void 0, void 0, function* () {
             const profiler = AppCreator.getProfiler(configs);
-            yield ncp(path_1.default.join(__dirname, `../templates/express`), configs.name);
+            yield ncp(path_1.default.join(__dirname, `./templates/express`), configs.name);
             AppCreator.renameFile(configs.name, 'gitignore', '.gitignore');
             AppCreator.renameFile(configs.name, 'env', '.env');
             AppCreator.template(configs.name + '/.env', profiler);
