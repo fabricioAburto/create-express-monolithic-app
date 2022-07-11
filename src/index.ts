@@ -25,6 +25,12 @@ export const questioner = async () => {
       default: 8080,
       message: 'Ingresa el puero:',
     },
+    {
+      name: 'dbPort',
+      type: 'number',
+      default: 3306,
+      message: 'Ingresa el puerto de la base de datos:',
+    },
   ]);
   console.log(answers);
   AppCreator.create(answers).catch(console.error);
@@ -35,11 +41,14 @@ export class AppCreator {
     const profiler: Profiler = {
       NAME: configs.name,
       PORT: configs.port || 3000,
+      DATABASE_PORT: configs.dbPort,
     };
 
     await ncp(path.join(__dirname, `../templates/express`), configs.name);
 
     AppCreator.renameFile(configs.name, 'gitignore', '.gitignore');
+    AppCreator.renameFile(configs.name, 'env', '.env');
+    AppCreator.template(configs.name + '/.env', profiler);
 
     glob.sync(`${configs.name}/**/*`).forEach(file => {
       if (fs.lstatSync(file).isFile()) AppCreator.template(file, profiler);
