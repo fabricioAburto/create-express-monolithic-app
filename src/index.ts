@@ -16,7 +16,7 @@ export const questioner = async () => {
     {
       name: 'name',
       type: 'input',
-      default: 'host',
+      default: 'express-server',
       message: 'Ingresa el nombre:',
     },
     {
@@ -30,6 +30,12 @@ export const questioner = async () => {
       type: 'number',
       default: 3306,
       message: 'Ingresa el puerto de la base de datos:',
+    },
+    {
+      name: 'dbName',
+      type: 'input',
+      default: 'test',
+      message: 'Ingresa el nombre de la base de datos:',
     },
     {
       name: 'author',
@@ -82,6 +88,7 @@ export class AppCreator {
       AUTHOR: configs.author,
       PORT: configs.port || 3000,
       DATABASE_PORT: configs.dbPort,
+      DATABASE_NAME: configs.dbName,
     };
   }
 }
