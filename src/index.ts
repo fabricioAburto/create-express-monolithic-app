@@ -31,6 +31,12 @@ export const questioner = async () => {
       default: 3306,
       message: 'Ingresa el puerto de la base de datos:',
     },
+    {
+      name: 'author',
+      type: 'input',
+      default: 'unknown',
+      message: 'Nombre del author:',
+    },
   ]);
   console.log(answers);
   AppCreator.create(answers).catch(console.error);
@@ -38,11 +44,7 @@ export const questioner = async () => {
 
 export class AppCreator {
   static async create(configs: Configurations) {
-    const profiler: Profiler = {
-      NAME: configs.name,
-      PORT: configs.port || 3000,
-      DATABASE_PORT: configs.dbPort,
-    };
+    const profiler = AppCreator.getProfiler(configs);
 
     await ncp(path.join(__dirname, `../templates/express`), configs.name);
 
@@ -73,6 +75,14 @@ export class AppCreator {
       );
     }, content);
     fs.writeFileSync(filename, template);
+  }
+  static getProfiler(configs: Configurations): Profiler {
+    return {
+      NAME: configs.name,
+      AUTHOR: configs.author,
+      PORT: configs.port || 3000,
+      DATABASE_PORT: configs.dbPort,
+    };
   }
 }
 
