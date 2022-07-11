@@ -14,7 +14,7 @@ export class AppCreator {
   static async create(configs: Configurations) {
     const profiler = AppCreator.getProfiler(configs);
 
-    await ncp(path.join(__dirname, `../templates/express`), configs.name);
+    await ncp(path.join(__dirname, `./templates/express`), configs.name);
 
     AppCreator.renameFile(configs.name, 'gitignore', '.gitignore');
     AppCreator.renameFile(configs.name, 'env', '.env');
