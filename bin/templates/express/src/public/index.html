@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Home</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+      }
+      body {
+        width: 100vw;
+      }
+      .center {
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      body {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        background-color: #0069ff;
+      }
+      .center .title {
+        font-size: 5rem;
+        color: #eceaff;
+      }
+      .center .title-secondary {
+        color: #eceaff;
+        font-size: 1.3rem;
+      }
+      .btn-repo {
+        color: #fff;
+        border: none;
+        padding: 1rem;
+        cursor: pointer;
+        border-radius: 5px;
+        background-color: #002c9b;
+      }
+      .btn-repo:hover {
+        background-color: #001d67;
+      }
+      p {
+        font-size: 12px;
+        color: rgb(225, 223, 255);
+      }
+      #img-topLeft {
+        left: 0;
+        top: 10px;
+        position: absolute;
+      }
+
+      #img-topRight {
+        right: 0;
+        top: 20px;
+        position: absolute;
+      }
+      #img-bottomLeft {
+        left: 0;
+        bottom: 0;
+        position: absolute;
+      }
+      #img-bottomRight {
+        right: 0;
+        bottom: 0;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center">
+      <h1 class="title">Hello Colleague!!!</h1>
+      <h1 class="title-secondary">
+        Voila! Ya tienes tu servidor express up and running!
+      </h1>
+      <br />
+      <br />
+      <p>
+        Si te ha gustado este generador, podrias darle una estrellita al
+        repositorio e incluso participar.
+      </p>
+      <br />
+      <button class="btn-repo" id="btn-repo">Ir al repositorio</button>
+    </div>
+    <img id="img-topLeft" src="./assets/topLeft.svg" alt="" />
+    <img id="img-topRight" src="./assets/topRight.svg" alt="" />
+    <img id="img-bottomLeft" src="./assets/bottomLeft.svg" alt="" />
+    <img id="img-bottomRight" src="./assets/bottomRight.svg" alt="" />
+
+    <script>
+      var btn = document.getElementById('btn-repo');
+      btn.addEventListener('click', () => {
+        window.open(
+          `https://github.com/PinoFlores/create-express-monolithic-app`,
+          '_blank'
+        );
+      });
+    </script>
+  </body>
+</html>

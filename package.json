@@ -3,7 +3,7 @@
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
-  "bin": "bin/create-express-monolithic-app.js",
+  "bin": "bin/index.js",
   "files": [
     "dist",
     "src"
