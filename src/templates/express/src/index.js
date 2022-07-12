@@ -10,7 +10,7 @@ const app = express();
 
 // Configuraciones
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.EXPRESS_PORT || 3000;
 app.set('port', PORT);
 
 app.use(cors());
