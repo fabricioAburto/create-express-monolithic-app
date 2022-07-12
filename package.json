@@ -1,20 +1,22 @@
 {
-  "version": "0.1.8",
+  "version": "0.1.9",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "bin": "bin/index.js",
   "files": [
     "dist",
-    "src"
+    "src",
+    "bin"
   ],
   "engines": {
     "node": ">=10"
   },
   "scripts": {
-    "start": "tsc && node bin/create-mf-app.js",
+    "build": "tsc",
     "start:tsdx": "tsdx watch",
-    "build": "tsc"
+    "publish": "npm publish --access public",
+    "start": "tsc && node bin/create-mf-app.js"
   },
   "husky": {
     "hooks": {
