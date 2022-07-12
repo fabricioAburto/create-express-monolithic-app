@@ -5,38 +5,40 @@ Es una opcion mas completa a los generadores actuales.
 
 ## Como usarlo
 
+1. Installa la herramienta de forma global
+
 ```cmd
 npm install -g create-express-monolithic-app
 ```
 
-Crear el proyecto usando:
+2. Invoca la herramienta escribiendo el siguiente comando:
 
 ```cmd
 npx create-express-monolithic-app
 ```
 
-Sigue los pasos.
+3. Sigue los pasos contestando a las preguntas de configuracion
 
 
-Ingresas a la carpeta que se genero, la cual deberia llamarse igual al nombre que has pasado o sino deberias tener una carpeta llamada `express-server`
+4. Una vez que ha terminado, ingresas a la carpeta que se genero, la cual deberia llamarse igual que el nombre que has pasado o sino ingresaste el nombre se creara
+una carpeta por defecto llamada `express-server`/
 
-Por ultimo installar dependencias y lanzar la applicacion.
+5. Instala todas las dependencias:
 
 ```
 npm install
+```
+
+6. Por ultimo inicio el servidor:
+
+```
 npm start
 ```
 
 ## Conexion a la base de datos
-Por defecto se configurar una conexion con el driver de mysql con las siguientes variables:
-```md
-PORT=3306
-USER=root
-PASSWORD=
-HOST=127.0.0.1
-DATABASE_NAME=test
-```
-Asegurate de cambiar estos valores con los adecuados en tu caso.
 
+Segun has seleccionado el drive de base de datos, se agregaran
+unas variables de entorno en el archivo .env. Asegurate que sean 
+los adecuados en tu caso.
 
 
