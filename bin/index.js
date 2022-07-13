@@ -16,6 +16,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const app_builder_1 = require("./app-builder");
 const index_1 = __importDefault(require("./steps/index"));
 const express_1 = __importDefault(require("./steps/express"));
+const help_message_1 = require("./help-message");
 const getMetadata = () => __awaiter(void 0, void 0, void 0, function* () {
     let express = yield express_1.default.new().execute();
     const configs = yield index_1.default.execute(express.wantDatabase);
@@ -23,6 +24,6 @@ const getMetadata = () => __awaiter(void 0, void 0, void 0, function* () {
 });
 (() => __awaiter(void 0, void 0, void 0, function* () {
     const answers = yield getMetadata();
-    console.log(answers);
+    help_message_1.printHelpMessage(answers);
     app_builder_1.AppCreator.create(answers).catch(console.error);
 }))();

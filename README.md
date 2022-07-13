@@ -1,6 +1,7 @@
 # create-express-monolithic-app
 
-Es una opcion mas completa a los generadores actuales. 
+Es una opcion mas completa a los generadores actuales. Suporta 
+`mysql`, `redis` y `mongodb` como capa de persistencia.
 
 
 ## Como usarlo
@@ -42,3 +43,15 @@ unas variables de entorno en el archivo .env. Asegurate que sean
 los adecuados en tu caso.
 
 
+### Colaboration
+
+Feel free to colaborate to extends in this small generator. There is no rules.
+
+### TODO
+
+*There are a large list of task to do. Feel free to pick one and start the collaboration.*
+
+- [ ] Add support for testing
+- [ ] Add support for adding engine support
+- [ ] Add library dynamically in the package.json
+- [ ] Add support for containerize the app with docker-componse
